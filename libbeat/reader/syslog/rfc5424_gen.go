@@ -1783,17 +1783,23 @@ tr40:
         tok = p
     
 	goto st39
+tr47:
+//line parser/rfc5424.rl:50
+
+        s.sdValueEscapes = append(s.sdValueEscapes, p-1)
+    
+	goto st39
 	st39:
 		if p++; p == pe {
 			goto _test_eof39
 		}
 	st_case_39:
-//line rfc5424_gen.go:1792
+//line rfc5424_gen.go:1798
 		switch data[p] {
 		case 34:
 			goto tr43
 		case 92:
-			goto tr44
+			goto st41
 		case 93:
 			goto st0
 		}
@@ -1815,7 +1821,7 @@ tr43:
 			goto _test_eof40
 		}
 	st_case_40:
-//line rfc5424_gen.go:1819
+//line rfc5424_gen.go:1825
 		switch data[p] {
 		case 32:
 			goto st4
@@ -1837,7 +1843,7 @@ tr5:
 			goto _test_eof73
 		}
 	st_case_73:
-//line rfc5424_gen.go:1841
+//line rfc5424_gen.go:1847
 		if data[p] == 91 {
 			goto st2
 		}
@@ -1847,23 +1853,19 @@ tr41:
 
         tok = p
     
-//line parser/rfc5424.rl:50
-
-        s.sdValueEscapes = append(s.sdValueEscapes, p)
-    
-	goto st41
-tr44:
-//line parser/rfc5424.rl:50
-
-        s.sdValueEscapes = append(s.sdValueEscapes, p)
-    
 	goto st41
 	st41:
 		if p++; p == pe {
 			goto _test_eof41
 		}
 	st_case_41:
-//line rfc5424_gen.go:1867
+//line rfc5424_gen.go:1863
+		if data[p] == 34 {
+			goto tr47
+		}
+		if 92 <= data[p] && data[p] <= 93 {
+			goto tr47
+		}
 		goto st39
 	st42:
 		if p++; p == pe {

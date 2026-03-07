@@ -48,7 +48,7 @@
     }
 
     action set_escape {
-        s.sdValueEscapes = append(s.sdValueEscapes, p)
+        s.sdValueEscapes = append(s.sdValueEscapes, p-1)
     }
 
     nil_value = '-';
@@ -56,7 +56,7 @@
     version = graph+ > tok %set_version;
 
     escape_chars    = ('"' | ']' | bs);
-    param_value_escape = (bs >set_escape escape_chars);
+    param_value_escape = bs (escape_chars >set_escape);
     sd_name         = (graph - ('=' | ']' | '"' | sp)){1,32};
     param_name      = sd_name >tok %set_param_name;
     param_value_unsafe = (bs (any - escape_chars));
