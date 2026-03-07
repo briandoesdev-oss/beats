@@ -98,6 +98,21 @@ func TestParseRFC5424(t *testing.T) {
 				rawSDValue: `[exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"][examplePriority@32473 class="high"]`,
 			},
 		},
+		"sd-with-bare-backslash": {
+			in: `<165>1 2003-10-11T22:14:15.003Z mymachine.example.com evntslog - ID47 [exampleSDID@32473 DisplayName="Domain\Username"] This is a message`,
+			want: message{
+				timestamp:  mustParseTime(time.RFC3339Nano, "2003-10-11T22:14:15.003Z", nil),
+				priority:   165,
+				facility:   20,
+				severity:   5,
+				version:    1,
+				hostname:   "mymachine.example.com",
+				process:    "evntslog",
+				msgID:      "ID47",
+				msg:        "This is a message",
+				rawSDValue: `[exampleSDID@32473 DisplayName="Domain\Username"]`,
+			},
+		},
 		"sd-with-escaped-backslash": {
 			in: `<165>1 2003-10-11T22:14:15.003Z mymachine.example.com evntslog - ID47 [exampleSDID@32473 DisplayName="Domain\\Username"] This is a message`,
 			want: message{

@@ -457,13 +457,7 @@ tr26:
 			goto _test_eof19
 		}
 	st_case_19:
-		if data[p] == 34 {
-			goto st18
-		}
-		if 92 <= data[p] && data[p] <= 93 {
-			goto st18
-		}
-		goto tr0
+		goto st18
 	st27:
 		if p++; p == pe {
 			goto _test_eof27
@@ -487,7 +481,7 @@ tr11:
 			goto _test_eof20
 		}
 	st_case_20:
-//line rfc5424_gen.go:491
+//line rfc5424_gen.go:485
 		switch data[p] {
 		case 43:
 			goto st21
@@ -580,7 +574,7 @@ tr6:
 			goto _test_eof23
 		}
 	st_case_23:
-//line rfc5424_gen.go:584
+//line rfc5424_gen.go:578
 		switch data[p] {
 		case 32:
 			goto tr7
@@ -648,7 +642,7 @@ tr6:
 
         m.setMsg(data[tok:p])
     
-//line rfc5424_gen.go:652
+//line rfc5424_gen.go:646
 		}
 	}
 
@@ -662,7 +656,7 @@ tr6:
 }
 
 
-//line rfc5424_gen.go:666
+//line rfc5424_gen.go:660
 const check_start int = 1
 const check_first_final int = 10
 const check_error int = 0
@@ -681,12 +675,12 @@ func isRFC5424(data string) bool {
     pe := len(data)
 
     
-//line rfc5424_gen.go:685
+//line rfc5424_gen.go:679
 	{
 	cs = check_start
 	}
 
-//line rfc5424_gen.go:690
+//line rfc5424_gen.go:684
 	{
 	if p == pe {
 		goto _test_eof
@@ -787,7 +781,7 @@ tr6:
 			goto _test_eof7
 		}
 	st_case_7:
-//line rfc5424_gen.go:791
+//line rfc5424_gen.go:785
 		if 48 <= data[p] && data[p] <= 57 {
 			goto st8
 		}
@@ -838,7 +832,7 @@ tr6:
 }
 
 
-//line rfc5424_gen.go:842
+//line rfc5424_gen.go:836
 const parse_sd_start int = 1
 const parse_sd_first_final int = 73
 const parse_sd_error int = 0
@@ -866,12 +860,12 @@ func parseStructuredData(data string) map[string]interface{} {
     }
 
     
-//line rfc5424_gen.go:870
+//line rfc5424_gen.go:864
 	{
 	cs = parse_sd_start
 	}
 
-//line rfc5424_gen.go:875
+//line rfc5424_gen.go:869
 	{
 	if p == pe {
 		goto _test_eof
@@ -1068,7 +1062,7 @@ tr2:
 			goto _test_eof3
 		}
 	st_case_3:
-//line rfc5424_gen.go:1072
+//line rfc5424_gen.go:1066
 		switch data[p] {
 		case 32:
 			goto tr3
@@ -1100,7 +1094,7 @@ tr3:
 			goto _test_eof4
 		}
 	st_case_4:
-//line rfc5424_gen.go:1104
+//line rfc5424_gen.go:1098
 		if data[p] == 33 {
 			goto tr6
 		}
@@ -1128,7 +1122,7 @@ tr6:
 			goto _test_eof5
 		}
 	st_case_5:
-//line rfc5424_gen.go:1132
+//line rfc5424_gen.go:1126
 		switch data[p] {
 		case 33:
 			goto st6
@@ -1764,7 +1758,7 @@ tr8:
 			goto _test_eof37
 		}
 	st_case_37:
-//line rfc5424_gen.go:1768
+//line rfc5424_gen.go:1762
 		if data[p] == 34 {
 			goto st38
 		}
@@ -1794,7 +1788,7 @@ tr40:
 			goto _test_eof39
 		}
 	st_case_39:
-//line rfc5424_gen.go:1798
+//line rfc5424_gen.go:1792
 		switch data[p] {
 		case 34:
 			goto tr43
@@ -1821,7 +1815,7 @@ tr43:
 			goto _test_eof40
 		}
 	st_case_40:
-//line rfc5424_gen.go:1825
+//line rfc5424_gen.go:1819
 		switch data[p] {
 		case 32:
 			goto st4
@@ -1843,7 +1837,7 @@ tr5:
 			goto _test_eof73
 		}
 	st_case_73:
-//line rfc5424_gen.go:1847
+//line rfc5424_gen.go:1841
 		if data[p] == 91 {
 			goto st2
 		}
@@ -1869,14 +1863,8 @@ tr44:
 			goto _test_eof41
 		}
 	st_case_41:
-//line rfc5424_gen.go:1873
-		if data[p] == 34 {
-			goto st39
-		}
-		if 92 <= data[p] && data[p] <= 93 {
-			goto st39
-		}
-		goto st0
+//line rfc5424_gen.go:1867
+		goto st39
 	st42:
 		if p++; p == pe {
 			goto _test_eof42
